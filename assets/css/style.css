@@ -31,13 +31,17 @@ a {
     background: linear-gradient(135deg, rgba(12, 30, 58, 0.9), rgba(30, 63, 102, 0.8)), url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1600&q=85') center/cover;
     color: var(--white);
     min-height: 100vh;
+    padding: clamp(32px, 5vw, 64px) 0 clamp(96px, 12vw, 140px);
+}
+
+.hero-inner {
+    width: min(1180px, calc(100% - clamp(32px, 8vw, 160px)));
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: clamp(32px, 5vw, 64px);
     align-items: center;
-    padding: 32px clamp(16px, 5vw, 80px) 80px;
 }
-
 
 .hero .navbar {
     grid-column: 1 / -1;
@@ -47,6 +51,11 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 32px;
+    background: linear-gradient(120deg, rgba(12, 30, 58, 0.7), rgba(30, 63, 102, 0.55));
+    border: 1px solid rgba(138, 180, 248, 0.25);
+    border-radius: 24px;
+    padding: 16px clamp(16px, 4vw, 32px);
+    backdrop-filter: blur(12px);
 }
 
 .brand {
@@ -67,6 +76,7 @@ a {
     font-weight: 600;
     position: relative;
     padding-bottom: 4px;
+    color: rgba(255, 255, 255, 0.86);
 }
 
 .nav-links a::after {
@@ -87,19 +97,20 @@ a {
 }
 
 .cta {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 10px 24px;
     border-radius: 999px;
     font-weight: 600;
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .cta:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .hero-content {
-    margin-top: clamp(40px, 10vh, 120px);
+    padding-block: clamp(24px, 6vh, 56px);
     max-width: 520px;
 }
 
@@ -142,19 +153,20 @@ h1 {
     width: min(420px, 90vw);
     border-radius: 32px;
     box-shadow: 0 32px 64px rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .hero-detail-card {
     position: absolute;
     bottom: 24px;
     left: 24px;
-    background: rgba(12, 30, 58, 0.85);
+    background: linear-gradient(140deg, rgba(12, 30, 58, 0.92), rgba(30, 63, 102, 0.88));
     border-radius: 20px;
     padding: 20px 24px;
     max-width: 240px;
     box-shadow: 0 16px 32px rgba(12, 30, 58, 0.35);
     backdrop-filter: blur(6px);
+    border: 1px solid rgba(138, 180, 248, 0.28);
 }
 
 .hero-detail-card .label {
@@ -197,7 +209,7 @@ h1 {
 }
 
 .section {
-    padding: clamp(64px, 12vw, 120px) clamp(16px, 8vw, 120px);
+    padding: clamp(64px, 12vw, 120px) 0;
 }
 
 .section h2 {
@@ -209,6 +221,11 @@ h1 {
 .section p {
     color: rgba(19, 34, 59, 0.78);
     max-width: 720px;
+}
+
+.section-inner {
+    width: min(1180px, calc(100% - clamp(32px, 8vw, 160px)));
+    margin: 0 auto;
 }
 
 .center {
@@ -277,7 +294,7 @@ h1 {
 }
 
 .visual .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.96);
     border-radius: 24px;
     padding: 32px;
     box-shadow: 0 20px 40px rgba(12, 30, 58, 0.12);
@@ -334,13 +351,14 @@ h1 {
     position: absolute;
     top: 24px;
     right: 24px;
-    background: rgba(12, 30, 58, 0.8);
+    background: linear-gradient(135deg, rgba(12, 30, 58, 0.92), rgba(30, 63, 102, 0.82));
     color: var(--white);
     padding: 6px 16px;
     border-radius: 999px;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.08em;
+    border: 1px solid rgba(138, 180, 248, 0.35);
 }
 
 .story {
@@ -394,7 +412,7 @@ h1 {
 
 .experience-card {
     position: relative;
-    background: rgba(12, 30, 58, 0.8);
+    background: rgba(12, 30, 58, 0.85);
     padding: 32px;
     border-radius: 28px;
     border: 1px solid rgba(138, 180, 248, 0.2);
@@ -414,7 +432,7 @@ h1 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, rgba(12, 30, 58, 0.78), rgba(19, 34, 59, 0.6));
+    background: linear-gradient(160deg, rgba(12, 30, 58, 0.8), rgba(19, 34, 59, 0.62));
     z-index: -1;
 }
 
@@ -446,7 +464,7 @@ h1 {
 
 .gallery-note {
     margin-top: 32px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     border-radius: 24px;
     padding: 24px 28px;
     border: 1px solid rgba(74, 119, 184, 0.18);
@@ -491,11 +509,11 @@ h1 {
     max-width: 620px;
     margin: 0 auto;
     text-align: center;
-    background: rgba(19, 34, 59, 0.6);
+    background: rgba(10, 23, 45, 0.78);
     padding: clamp(32px, 6vw, 56px);
     border-radius: 32px;
-    border: 1px solid rgba(138, 180, 248, 0.2);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(138, 180, 248, 0.28);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
 }
 
 .contact-list {
@@ -514,7 +532,12 @@ h1 {
 .footer {
     background: var(--navy);
     color: rgba(255, 255, 255, 0.75);
-    padding: 48px clamp(16px, 8vw, 120px);
+    padding: 48px 0;
+}
+
+.footer-inner {
+    width: min(1180px, calc(100% - clamp(32px, 8vw, 160px)));
+    margin: 0 auto;
 }
 
 .footer-info {
@@ -546,9 +569,8 @@ h1 {
         gap: 16px;
     }
 
-    .hero {
+    .hero-inner {
         grid-template-columns: 1fr;
-        padding-bottom: 120px;
     }
 
     .hero-actions {
